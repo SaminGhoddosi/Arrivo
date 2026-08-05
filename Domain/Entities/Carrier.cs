@@ -8,5 +8,13 @@ namespace Domain.Entities
 {
     public class Carrier : Entity
     {
+        public string Name { get; set; }
+        public string LogoUrl { get; set; }
+        public CreatedEnum CreatedBy { get; set; }
+    }
+    public enum CreatedEnum
+    {
+        System,
+        AI
     }
 }
