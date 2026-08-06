@@ -4,5 +4,7 @@
     {
         public int CarrierId { get; set; }
         public Carrier Carrier { get; set; }
+        public int TicketId { get; set; }
+        public Ticket Ticket { get; set; }
     }
 }
