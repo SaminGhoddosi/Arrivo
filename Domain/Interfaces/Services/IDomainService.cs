@@ -21,10 +21,8 @@ namespace Domain.Interfaces.Services
         Task<int> CountAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstOrDefaultAsync(ISpecification<TEntity> spec);
-        void DetachLocal(Func<TEntity, bool> predicate);
         void DetachAll();
-        void Seed(IEnumerable<TEntity> data);
         int ExecuteSql(string sql);
-        Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate);
     }
 }

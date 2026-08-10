@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Infra.Repository
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : Entity
+    public class RepositoryBase<TEntity>(AppDbContext dbContext) : IDisposable, IRepositoryBase<TEntity> where TEntity : Entity
     {
-        public Task<TEntity> AddAsync(TEntity entity)
+        public Task<TEntity> AddAsync(TEntity entity) 
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace Infra.Repository
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate)
+        public Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate)
         {
             throw new NotImplementedException();
         }
@@ -51,7 +51,13 @@ namespace Infra.Repository
             throw new NotImplementedException();
         }
 
-        public Task<int> ExecuteSqlAsync(string sql)
+        public void Dispose()
+        {
+            dbContext.Dispose();
+            GC.SuppressFinalize(this);
+        }
+
+        public Task<int> ExecuteSql(string sql)
         {
             throw new NotImplementedException();
         }

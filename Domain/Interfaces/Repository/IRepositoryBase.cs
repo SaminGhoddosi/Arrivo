@@ -23,11 +23,12 @@ namespace Domain.Interfaces.Repository
         Task<TEntity> FirstAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstOrDefaultAsync(ISpecification<TEntity> spec);
         void DetachAll();
-        Task<int> ExecuteSqlAsync(string sql);
-        Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
+        Task<int> ExecuteSql(string sql);
+        Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate);
         Task RemoverInt(int id);
         Task UpdateRangeAsync(params TEntity[] entities);
         Task AddRangeAsync(params TEntity[] entities);
         IQueryable<TEntity> ApplySpecification(ISpecification<TEntity> spec);
+        void Dispose();
     }
 }

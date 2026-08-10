@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 namespace Domain.Services
 {
     public class DomainService<TEntity>(IRepositoryBase<TEntity> repository) : IDomainService<TEntity> where TEntity : Entity
-    {//dispose, executesqlasync, tirar detachLocal e seed e nomes em português, listallasync
+    {
         public Task<TEntity> AddAsync(TEntity entity)
         {
             return repository.GetByIdAsync(entity);
         }
 
-        public Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate)
+        public Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate)
         {
-            return repository.Buscar(predicate);
+            return repository.Search(predicate);
         }
 
         public Task<int> CountAsync(ISpecification<TEntity> spec)
@@ -35,11 +35,6 @@ namespace Domain.Services
         public void DetachAll()
         {
             repository.DetachAll();
-        }
-
-        public void DetachLocal(Func<TEntity, bool> predicate)
-        {
-            repository.DetachLocal(predicate);
         }
 
         public int ExecuteSql(string sql)
@@ -66,6 +61,10 @@ namespace Domain.Services
         {
             return repository.ListAllAsync();
         }
+        public void Dispose()
+        {
+            repository.Dispose();
+        }
 
         public Task<PagedResult<TEntity>> ListAllPagedAsync(int page, int pageSize)
         {
@@ -80,11 +79,6 @@ namespace Domain.Services
         public Task<PagedResult<TEntity>> ListPagedAsync(ISpecification<TEntity> spec, int page, int pageSize)
         {
             return repository.ListPagedAsync(spec, page, pageSize);
-        }
-
-        public void Seed(IEnumerable<TEntity> data)
-        {
-            repository.Seed(data);
         }
 
         public Task<int> UpdateAsync(TEntity entity)
