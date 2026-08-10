@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Domain/Domain.csproj" />
+  <Project Path="Infra/Infra.csproj" Id="64d90fb7-54f5-41d5-9515-8df2ba556168" />
 </Solution>
