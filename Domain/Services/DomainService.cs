@@ -32,11 +32,6 @@ namespace Domain.Services
             return repository.DeleteAsync(entity);
         }
 
-        public void DetachAll()
-        {
-            repository.DetachAll();
-        }
-
         public int ExecuteSql(string sql)
         {
             return repository.ExecuteSql(sql);
@@ -60,10 +55,6 @@ namespace Domain.Services
         public Task<IReadOnlyList<TEntity>> ListAllAsync()
         {
             return repository.ListAllAsync();
-        }
-        public void Dispose()
-        {
-            repository.Dispose();
         }
 
         public Task<PagedResult<TEntity>> ListAllPagedAsync(int page, int pageSize)

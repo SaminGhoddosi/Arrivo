@@ -1,4 +1,5 @@
 using Domain.Entities;
+using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    public class PackageDomainService : DomainService<Package>, IPackageService
+    public class PackageDomainService(IPackageRepository repository) : DomainService<Package>(repository), IPackageService
     {
     }
 }

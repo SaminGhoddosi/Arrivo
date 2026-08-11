@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infra.Repository
 {
-    public class RepositoryBase<TEntity>(AppDbContext dbContext) : IDisposable, IRepositoryBase<TEntity> where TEntity : Entity
+    public class RepositoryBase<TEntity>(AppDbContext dbContext) : IRepositoryBase<TEntity> where TEntity : Entity
     {
         public Task<TEntity> AddAsync(TEntity entity) 
         {
@@ -44,17 +44,6 @@ namespace Infra.Repository
         public Task<int> DeleteAsync(TEntity entity)
         {
             throw new NotImplementedException();
-        }
-
-        public void DetachAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            dbContext.Dispose();
-            GC.SuppressFinalize(this);
         }
 
         public Task<int> ExecuteSql(string sql)

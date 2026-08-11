@@ -1,4 +1,5 @@
 using Domain.Entities;
+using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    public class CarrierDomainService : DomainService<Carrier>, ICarrierService
+    public class CarrierDomainService(ICarrierRepository repository) : DomainService<Carrier>(repository), ICarrierService
     {
     }
 }
