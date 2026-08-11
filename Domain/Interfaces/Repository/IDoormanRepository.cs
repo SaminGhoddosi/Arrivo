@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.Repository
 {
-    public interface IDoormanRepository : IRepositoryBase<Doorman>
+    public interface IDoormanRepository : IRepository<Doorman>
     {
     }
 }

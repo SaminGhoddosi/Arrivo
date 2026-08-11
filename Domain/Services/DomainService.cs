@@ -2,11 +2,12 @@
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using Paging;
+using Ardalis.Specification;
 using System.Linq.Expressions;
 
 namespace Domain.Services
 {
-    public class DomainService<TEntity>(IRepositoryBase<TEntity> repository) : IDomainService<TEntity> where TEntity : Entity
+    public class DomainService<TEntity>(IRepository<TEntity> repository) : IDomainService<TEntity> where TEntity : Entity
     {
         public Task<TEntity> AddAsync(TEntity entity)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.Repository
 {
-    public interface IPackageRepository : IRepositoryBase<Package>
+    public interface IPackageRepository : IRepository<Package>
     {
     }
 }

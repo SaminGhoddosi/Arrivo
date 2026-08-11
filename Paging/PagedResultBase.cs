@@ -23,13 +23,11 @@
     public class PagedResult<T> : PagedResultBase
     {
         public IList<T> Results { get; set; } = new List<T>();
-        public IList<T> Data { get; set; } = new List<T>();
     }
 
     public static class PagedExtensions
     {
-        public static PagedResult<T> GetPaged<T>(this IQueryable<T> query,
-                                 int page, int pageSize) where T : class
+        public static PagedResult<T> GetPaged<T>(this IQueryable<T> query, int page, int pageSize) where T : class
         {
             var result = new PagedResult<T>();
             result.CurrentPage = page;

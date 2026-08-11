@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Ardalis.Specification;
+using Paging;
 using System.Threading.Tasks;
 
 namespace Domain.Interfaces.Services

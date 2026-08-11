@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.Repository
 {
-    public interface IApartmentRepository : IRepositoryBase<Apartment>
+    public interface IApartmentRepository : IRepository<Apartment>
     {
     }
 }

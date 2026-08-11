@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Paging;
+using Ardalis.Specification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Infra.Repository
 {
-    public class RepositoryBase<TEntity>(AppDbContext dbContext) : IRepositoryBase<TEntity> where TEntity : Entity
+    public class RepositoryBase<TEntity>(AppDbContext dbContext) : IRepository<TEntity> where TEntity : Entity
     {
         public Task<TEntity> AddAsync(TEntity entity) 
         {
