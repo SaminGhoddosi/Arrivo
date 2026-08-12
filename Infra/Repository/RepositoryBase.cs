@@ -48,11 +48,6 @@ namespace Infra.Repository
             throw new NotImplementedException();
         }
 
-        public Task<int> ExecuteSql(string sql)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<TEntity> FirstAsync(ISpecification<TEntity> spec)
         {
             throw new NotImplementedException();

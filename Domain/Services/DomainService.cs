@@ -11,7 +11,7 @@ namespace Domain.Services
     {
         public Task<TEntity> AddAsync(TEntity entity)
         {
-            return repository.GetByIdAsync(entity);
+            return repository.AddAsync(entity);
         }
 
         public Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate)
@@ -29,11 +29,6 @@ namespace Domain.Services
             return repository.DeleteAsync(entity);
         }
 
-        public int ExecuteSql(string sql)
-        {
-            return repository.ExecuteSql(sql);
-        }
-
         public Task<TEntity> FirstAsync(ISpecification<TEntity> spec)
         {
             return repository.FirstAsync(spec);
@@ -49,7 +44,7 @@ namespace Domain.Services
             return repository.GetByIdAsync(id);
         }
 
-        public Task<IReadOnlyList<TEntity>> ListAllAsync()
+        public Task<IEnumerable<TEntity>> ListAllAsync()
         {
             return repository.ListAllAsync();
         }
@@ -59,7 +54,7 @@ namespace Domain.Services
             return repository.ListAllPagedAsync(page, pageSize);
         }
 
-        public Task<IReadOnlyList<TEntity>> ListAsync(ISpecification<TEntity> spec)
+        public Task<IEnumerable<TEntity>> ListAsync(ISpecification<TEntity> spec)
         {
             return repository.ListAsync(spec);
         }

@@ -13,8 +13,8 @@ namespace Domain.Interfaces.Services
     public interface IDomainService<TEntity> where TEntity : Entity
     {
         Task<TEntity> GetByIdAsync(int id);
-        Task<IReadOnlyList<TEntity>> ListAllAsync();
-        Task<IReadOnlyList<TEntity>> ListAsync(ISpecification<TEntity> spec);
+        Task<IEnumerable<TEntity>> ListAllAsync();
+        Task<IEnumerable<TEntity>> ListAsync(ISpecification<TEntity> spec);
         Task<PagedResult<TEntity>> ListAllPagedAsync(int page, int pageSize);
         Task<PagedResult<TEntity>> ListPagedAsync(ISpecification<TEntity> spec, int page, int pageSize);
         Task<TEntity> AddAsync(TEntity entity);
@@ -23,7 +23,6 @@ namespace Domain.Interfaces.Services
         Task<int> CountAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstOrDefaultAsync(ISpecification<TEntity> spec);
-        int ExecuteSql(string sql);
         Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate);
     }
 }

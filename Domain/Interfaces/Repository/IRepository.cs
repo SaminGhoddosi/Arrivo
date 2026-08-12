@@ -24,7 +24,6 @@ namespace Domain.Interfaces.Repository
         Task<int> CountAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstOrDefaultAsync(ISpecification<TEntity> spec);
-        Task<int> ExecuteSql(string sql);
         Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate);
         Task RemoverInt(int id);
         Task UpdateRangeAsync(params TEntity[] entities);
