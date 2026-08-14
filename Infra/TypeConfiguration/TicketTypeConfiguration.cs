@@ -24,6 +24,15 @@ namespace Infra.TypeConfiguration
 
             builder.Property(x => x.DoormanId);
 
+            builder.HasOne(x => x.Resident)
+            .WithMany()
+            .HasForeignKey(x => x.ResidentId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(x => x.Doorman)
+            .WithMany()
+            .HasForeignKey(x => x.DoormanId)
+            .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

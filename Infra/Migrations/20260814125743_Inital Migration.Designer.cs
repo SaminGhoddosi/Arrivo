@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260813190419_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20260814125743_Inital Migration")]
+    partial class InitalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -373,13 +373,13 @@ namespace Infra.Migrations
                     b.HasOne("Domain.Entities.Doorman", "Doorman")
                         .WithMany()
                         .HasForeignKey("DoormanId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Resident", "Resident")
                         .WithMany()
                         .HasForeignKey("ResidentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Doorman");

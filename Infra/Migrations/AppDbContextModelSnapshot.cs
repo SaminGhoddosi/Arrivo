@@ -370,13 +370,13 @@ namespace Infra.Migrations
                     b.HasOne("Domain.Entities.Doorman", "Doorman")
                         .WithMany()
                         .HasForeignKey("DoormanId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Resident", "Resident")
                         .WithMany()
                         .HasForeignKey("ResidentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Doorman");
