@@ -7,6 +7,8 @@ namespace Infra.Specification
     {
         public BuildingSpecification(int id)
         {
+            Query.Include(x => x.Address);
+            Query.Where(x => x.Id == id);
         }
     }
 }

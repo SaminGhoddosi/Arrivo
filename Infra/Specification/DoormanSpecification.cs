@@ -7,6 +7,8 @@ namespace Infra.Specification
     {
         public DoormanSpecification(int id)
         {
+            Query.Include(x => x.Building);
+            Query.Where(x => x.Id == id);
         }
     }
 }
