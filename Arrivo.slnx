@@ -2,4 +2,5 @@
   <Project Path="Domain/Domain.csproj" />
   <Project Path="Infra/Infra.csproj" Id="64d90fb7-54f5-41d5-9515-8df2ba556168" />
   <Project Path="Paging/Paging.csproj" Id="b8e9b4ac-62f4-4d94-8428-afc0b34de936" />
+  <Project Path="UI/UI.csproj" Id="db824ef7-a1e2-46ea-a83a-70859b552020" />
 </Solution>

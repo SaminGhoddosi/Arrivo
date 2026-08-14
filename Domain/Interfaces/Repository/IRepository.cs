@@ -19,15 +19,11 @@ namespace Domain.Interfaces.Repository
         Task<PagedResult<TEntity>> ListPagedAsync(ISpecification<TEntity> spec, int page, int pageSize);
         Task<TEntity> AddAsync(TEntity entity);
         Task<int> UpdateAsync(TEntity entity);
-        Task BulkInsertAsync(IList<TEntity> entities);
         Task<int> DeleteAsync(TEntity entity);
         Task<int> CountAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstAsync(ISpecification<TEntity> spec);
         Task<TEntity> FirstOrDefaultAsync(ISpecification<TEntity> spec);
         Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate);
-        Task RemoverInt(int id);
-        Task UpdateRangeAsync(params TEntity[] entities);
-        Task AddRangeAsync(params TEntity[] entities);
         IQueryable<TEntity> ApplySpecification(ISpecification<TEntity> spec);
     }
 }

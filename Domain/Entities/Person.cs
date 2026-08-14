@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [NotMapped]
     public class Person : Entity
     {
         public int DocumentId { get; set; }
