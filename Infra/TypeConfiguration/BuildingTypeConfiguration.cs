@@ -11,9 +11,6 @@ namespace Infra.TypeConfiguration
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name).HasMaxLength(254);
-
-            builder.Property(x => x.AddressId);
-
         }
     }
 }
