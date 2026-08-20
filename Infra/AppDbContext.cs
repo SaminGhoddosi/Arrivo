@@ -6,7 +6,6 @@ namespace Infra
 {
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {
-        public DbSet<Address> Addresses { get; set; }
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Carrier> Carriers { get; set; }
@@ -19,8 +18,7 @@ namespace Infra
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.ApplyConfiguration(new AddressTypeConfiguration());
+            modelBuilder.Entity<Building>().OwnsOne(b => b.Address);
             modelBuilder.ApplyConfiguration(new ApartmentTypeConfiguration());
             modelBuilder.ApplyConfiguration(new BuildingTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CarrierTypeConfiguration());

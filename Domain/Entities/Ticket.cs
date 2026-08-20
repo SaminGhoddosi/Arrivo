@@ -7,8 +7,6 @@ namespace Domain.Entities
         public int ResidentId { get; set; }
         public Resident Resident { get; set; }
         public ICollection<Package> Packages { get; set; }
-        public string PhotoUrl { get; set; }
-        public string? ConfirmationPhotoUrl { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ConfirmedAt { get; set; }
         public TicketStatus Status { get; set; }

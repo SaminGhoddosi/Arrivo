@@ -1,6 +1,6 @@
-﻿namespace Domain.Entities
+﻿namespace Application.AppModel
 {
-    public class Address
+    public class AddressAppModel
     {
         public int ZipCode { get; set; }
         public string City { get; set; }

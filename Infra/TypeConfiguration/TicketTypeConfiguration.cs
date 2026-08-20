@@ -12,10 +12,6 @@ namespace Infra.TypeConfiguration
 
             builder.Property(x => x.ResidentId);
 
-            builder.Property(x => x.PhotoUrl);
-
-            builder.Property(x => x.ConfirmationPhotoUrl);
-
             builder.Property(x => x.CreatedAt);
 
             builder.Property(x => x.ConfirmedAt);
