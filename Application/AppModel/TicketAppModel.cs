@@ -11,8 +11,10 @@ namespace Application.AppModel
 
         public int ResidentId { get; set; }
         public string ResidentName { get; set; }
+        public string ResidentLastName { get; set; }
         public int DoormanId { get; set; }
         public string DoormanName { get; set; }
+        public string DoormanLastName { get; set; }
 
         public List<PackageAppModel> Packages { get; set; } = new();
     }
