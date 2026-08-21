@@ -4,11 +4,11 @@ using Domain.Entities;
 
 namespace Infra.Specification
 {
-    public class PackageSpecification : Specification<Package, PackageDetailAppModel>
+    public class PackageBuildingSpecification : Specification<Package, PackageDetailAppModel>
     {
-        public PackageSpecification(int id)
+        public PackageBuildingSpecification(int id)
         {
-            Query.Where(x => x.Id == id)
+            Query.Where(x => x.Ticket.Doorman.BuildingId == id)
                 .Select(p => new PackageDetailAppModel
                 {
                     Id = p.Id,

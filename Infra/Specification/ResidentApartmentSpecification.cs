@@ -1,14 +1,14 @@
-using Application.AppModel;
+﻿using Application.AppModel;
 using Ardalis.Specification;
 using Domain.Entities;
 
 namespace Infra.Specification
 {
-    public class ResidentSpecification : Specification<Resident, ResidentAppModel>
+    public class ResidentApartmentSpecification : Specification<Resident, ResidentAppModel>
     {
-        public ResidentSpecification(int id)
+        public ResidentApartmentSpecification(int id)
         {
-            Query.Where(x => x.Id == id)
+            Query.Where(x => x.ApartmentId == id)
                 .Select(x => new ResidentAppModel
                 {
                     Id = x.Id,
