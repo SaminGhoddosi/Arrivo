@@ -4,11 +4,11 @@ using Domain.Entities;
 
 namespace Infra.Specification
 {
-    public class TicketSpecification : Specification<Ticket, TicketAppModel>
+    public class TicketApartmentSpecification : Specification<Ticket, TicketAppModel>
     {
-        public TicketSpecification(int id)
+        public TicketApartmentSpecification(int id)
         {
-            Query.Where(x => x.Id == id)
+            Query.Where(x => x.Resident.ApartmentId == id)
                 .Select(x => new TicketAppModel
                 {
                     Id = x.Id,
@@ -22,15 +22,15 @@ namespace Infra.Specification
                     DoormanName = x.Doorman.Name,
                     DoormanLastName = x.Doorman.LastName,
                     Packages = x.Packages
-                    .Select(p => new PackageAppModel
-                    {
-                        Id = p.Id,
-                        CarrierId = p.CarrierId,
-                        CarrierName = p.Carrier.Name,
-                        CarrierLogoUrl = p.Carrier.LogoUrl,
-                        PhotoUrl = p.PhotoUrl,
-                        ConfirmationPhotoUrl = p.ConfirmationPhotoUrl
-                    }).ToList()
+                        .Select(p => new PackageAppModel
+                        {
+                            Id = p.Id,
+                            CarrierId = p.CarrierId,
+                            CarrierName = p.Carrier.Name,
+                            CarrierLogoUrl = p.Carrier.LogoUrl,
+                            PhotoUrl = p.PhotoUrl,
+                            ConfirmationPhotoUrl = p.ConfirmationPhotoUrl
+                        }).ToList()
                 });
         }
     }

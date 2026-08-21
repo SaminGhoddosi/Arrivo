@@ -10,11 +10,5 @@ namespace Application.AppModel
         public string CarrierLogoUrl { get; set; }
         public string PhotoUrl { get; set; }
         public string? ConfirmationPhotoUrl { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public TicketStatus Status { get; set; }
-        public string ResidentFullName { get; set; }
-        public int AptNumber { get; set; }
-        public string DoormanName { get; set; }
-
     }
 }

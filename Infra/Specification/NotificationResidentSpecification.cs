@@ -4,11 +4,11 @@ using Domain.Entities;
 
 namespace Infra.Specification
 {
-    public class NotificationSpecification : Specification<Notification, NotificationAppModel>
+    public class NotificationResidentSpecification : Specification<Notification, NotificationAppModel>
     {
-        public NotificationSpecification(int id)
+        public NotificationResidentSpecification(int id)
         {
-            Query.Where(x => x.Id == id)
+            Query.Where(x => x.Ticket.ResidentId == id)
                 .Select(x => new NotificationAppModel
                 {
                     Id = x.Id,
